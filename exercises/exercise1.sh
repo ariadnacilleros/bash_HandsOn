@@ -33,5 +33,5 @@ grep chr1 TAIR9_mRNA.bed | awk '{print$11}' | tr , "\n" | sort -nr | head
 
 #How would you get the name of the gene and the number of exons of the ten genes with more exons in chromosome 1? (in case there were duplicates, do not show them)
 # amb -k2,2 li estem indicant que volem que ordeni (sort) per la segona columna
-awk '{print$4"\t"$10}' TAIR9_mRNA.bed | sort -nr -k2,2 | uniq | head 
+grep chr1 TAIR9_mRNA.bed | awk '{print$4"\t"$10}' | sort -nr -k2,2 | uniq | head 
 
